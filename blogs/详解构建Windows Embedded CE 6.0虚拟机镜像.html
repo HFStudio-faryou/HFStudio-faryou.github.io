@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>详解构建Windows Embedded CE 6.0虚拟机镜像</title>
+</head>
+<body>
+  <h1>详解构建Windows Embedded CE 6.0虚拟机镜像</h1>
+  <p>
+        简介：Windows Embedded CE 6.0是Windows Embedded系列中的一个，相比于Windows CE 5.0，Windows Embedded CE 6.0更容易开发，可以兼容很多硬件平台。<br>
+        准备材料：1.Visual Studio（至少2005）<br>
+                            2.Windows Embedded CE 6.0 R3开发工具包<br>
+                            3.Visual PC<br>
+                            4.DR-dos启动盘<br>
+        软件安装：先安装Visual Studio（至少2005），再安装Windows Embedded CE 6.0的开发工具包，最后装上Window Embedded CE 6.0的R2和R3更新包。<br>
+            开发过程：<br>
+        和构建Windows Embedded Compact 7类似，打开Visual Studio，创建一个新项目，在窗口中选择Platform Builder，等待新建完成。在弹出的窗口中选择自己的项目类型，如果是给虚拟机用就选择“Enterprise Device”，如果是给开发板装就选择“BSP”并选择自己开发板的类型。然后勾选想要的一些功能，完成定制。打开Visual PC，创建一个虚拟机，选择ms-dos。<br>
+        打开自己的项目，生成→生成解决方案，弹出生成窗口，之后需要等待一些时间。<br>
+<br>
+        生成窗口下方提示成功，复制下上方链接，到文件资源管理器找到生成的nk.bin，重命名为ceibage.bin，复制并替换到DR-dos启动盘里。<br>
+        在虚拟机中装载上启动盘，就可以开机了。<br>
+    <br>
+  </p>
+  <a href="https://HFStudio-faryou.github.io">返回主页</a>
+</body>
+  </html>
