@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>手把手教你搭建免费DZ论坛（从选域名到搭建成功）</title>
+</head>
+<body>
+  <h1>手把手教你搭建免费DZ论坛（从选域名到搭建成功）</h1>
+  <p>
+       之前我搭过一个DZ论坛，没花一分钱（笑），今天来教教大家怎么搭。<br>
+       首先，我们需要选择域名。我这里用的是eu.org提供的免费域名。以下为注册方法：先打开这个网址：https://nic.eu.org，点击here，点击Register，注册一个账号，以下是要填写的内容格式规范：<br>
+    Name：随便填两个首字母大写的名字单词，注意两个单词之间要空一格，例：Faryou Crazy<br>
+ <br>
+E-mail：填你的邮箱<br>
+ <br>
+Address（line 1）：随便填一个地址<br>
+Address（line 2）：随便填一个地址<br>
+Address（line 3）：<br>
+Address（line 4）：<br>
+Address（line 5）：<br>
+Country：选China<br>
+Phone：<br>
+Fax：默认就可以，记住这一栏，如果怕忘记就复制下来保存好，一会要用<br>
+（两个复选框打钩）<br>
+ <br>
+Password：填你的密码<br>
+Confirm Password：重复上面的密码<br>
+    填完之后，点Create，然后进邮箱，查看收到的激活邮件，点里面的链接激活。<br>
+        激活完成之后，我们需要申请一个域名。打开https://nic.eu.org，在“Handle”一栏内输入你刚才记住的那串字符，“Password”一栏填密码，进入你的域名管理界面。<br>
+        点击“New Domain”，按照下面的填法填空：<br>
+    Complete Domain Name：填你要申请的域名全名Name：随便填两个首字母大写的名字单词，注意两个单词之间要空一格，例：Faryou Crazy<br>
+ <br>
+E-mail：填你的邮箱<br>
+ <br>
+Address（line 1）：随便填一个地址<br>
+Address（line 2）：随便填一个地址<br>
+Address（line 3）：<br>
+Address（line 4）：<br>
+Address（line 5）：<br>
+Country：选China<br>
+Phone：<br>
+Fax：默认就可以<br>
+（复选框打钩）<br>
+ <br>
+（选择“server names + replies on SQA + replies on NS（recommended）”）<br>
+Name1：edmund.dnspod.net<br>
+Name2：dempsey.dnspod.net（其他空着不填）<br>
+<br>
+         填完之后，点“Submit”。之后会有一串代码，等待代码结束弹出。如果最后一行是“Done”，那么你就可以等待eu.org向你发送邮件了；如果不是，那么返回刚才的页面，检查一下有没有地方填错。<br>
+        eu.org审核较慢，时间从几小时到几个月不等，因此要耐心等待。<br>
+        eu.org域名审核通过（收到通知邮件）之后，我们就要开始搭建论坛了。接下来是买服务器。我这里用的是灰狼云免费虚拟主机（yun316.net），毕竟我们是免费白嫖，所以用免费虚拟主机，当然如果你有腾讯云或阿里云的服务器搭出的论坛会更稳定一些。在灰狼云先注册，然后在它的用户界面里点击虚拟主机→增加新主机，选择免费节点2，其余保持默认，确认创建。点击虚拟主机→管理主机→一键登录高级面板。<br>
+        前往Discuz官网下载安装文件，在高级面板中点击在线文件→wwwroot→上传文件，选择Discuz压缩包，点击上传。上传完成之后点击文件旁边的解压，将压缩包内文件解压到wwwroot文件夹下，删除压缩包。打开Cloudflare官网（cloudflare-cn.com），注册账户，注册完之后登录，在cloudflare中添加自己的域名（example.eu.org），并前面往eu.org官网，登录，点击自己的域名→nameserver，将name1和name2分别改成cloudflare提供的两个域名。打开灰狼云高级面板→域名绑定，记住下面的“cname解析到”中的网址。在这个域名的DNS中添加cname记录，将www解析到刚才记住的网址。随后在浏览器中输入自己的网址，即可安装Discuz。数据库信息可以在灰狼云面板首页找到，我就不细说了。安装完成之后，在浏览器中访问自己的域名，即可看到自己的论坛了。<br>
+
+        说明：这个教程只是一个简单搭建DZ论坛的过程，仅供参考，搭建出的论坛很不稳定，不能长期使用。如果你要搭出稳定的论坛供长期使用，请选择腾讯或阿里的服务器。感谢大家的支持！<br>
+    <br>
+  </p>
+  <a href="https://HFStudio-faryou.github.io">返回主页</a>
+</body>
+</html>
