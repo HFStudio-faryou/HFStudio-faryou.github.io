@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>详解构建Windows Embedded Compact 7镜像</title>
+</head>
+<body>
+  <h1>详解构建Windows Embedded Compact 7镜像</h1>
+  <p>
+        Windows Embedded Compact 7（以下简称WEC7）是微软Windows Embedded CE 6.0 R3的进阶版本，相对于前一版本有了很大的改进。今天，我来带大家构建一个WEC7的镜像，让大家可以在虚拟机里体验WEC7以及对WEC7进行更为深入的开发。<br>
+<br>
+准备工具：1.Visual Studio 2008 SP1<br>
+                    2.Windows Embedded Compact 7开发工具（评估版密钥：YF4BV-BVP39-XXXKC-RB22F-836W4）<br>
+                    3.DR-Dos启动盘一个<br>
+                    4.虚拟机一个<br>
+<br>
+        首先打开VS2008，新建→Platform Builder→确定，会进入一个向导，点击下一步；选择BSP cepc x86，下一步；选择Enterprise Device，选择第一个选项，下一步；勾选自己想要的功能，下一步；再次勾选功能，下一步；点击完成，弹出弹窗后点击左边按钮。<br>
+<br>
+        打开自己的项目，生成→生成解决方案，弹出生成窗口，之后需要等待一些时间。<br>
+<br>
+        生成窗口下方提示成功，复制下上方链接，到文件资源管理器找到生成的nk.bin，重命名为ceibage.bin，复制并替换到DR-Dos启动盘里。<br>
+<br>
+        虚拟机装载启动盘，成功进入WEC7的界面<br>
+    <br>
+  </p>
+  <a href="https://HFStudio-faryou.github.io">返回主页</a>
+</body>
+</html>
