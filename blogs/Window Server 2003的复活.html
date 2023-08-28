@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Windows Server 2003的复活</title>
+</head>
+<body>
+  <h1>Windows Server 2003的复活</h1>
+  <h3>声明：本文为faryou和x64论坛的hjz0713共同完成，由我整理到本站
+  <p>
+    Day1 安装系统<br>
+    系统镜像下载→https://www.123pan.com/s/6zDuVv-4kNHA.html<br>
+    安装过程略<br>
+<br>
+    Day2 驱动安装<br>
+    受上次的教训，这次先驱动再补丁，驱动看我2008 R2这一篇文章，驱动精灵Server 2003也可以用→https://home.x64bbs.cn/forum.php?mod=redirect&goto=findpost&ptid=2378&pid=16687&fromuid=832<br>
+<br>
+    Day3 补丁和运行库<br>
+    先下载打开补丁包，这是某卡饭网友制作的XP补丁包，同样适用于Server 2003（R2）（话说这玩意儿是我印象中卡饭论坛唯一有用的东西），下载链接https://www.123pan.com/s/6zDuVv-H7WHA.html，不断点击下一步，开始安装。这一步可能需要2个以上小时。装完补丁，重启电脑，再下载打开两个运行库安装包，下载链接https://www.123pan.com/s/6zDuVv-A7WHA.html，打上运行库。<br>
+    然后再装上火绒或360→https://www.huorong.cn/；https://www.360.cn/，扫一遍漏打的补丁<br>
+<br>
+    Day4 安装软件<br>
+office 2010<br>
+        https://www.123pan.com/s/6zDuVv-TcWHA.html<br>
+        2003比2010相对于XP更有味道，不过...2003不支持最新的.pptx .docx .xlsx等文档，还是2010吧<br>
+Firefox 52.9<br>
+        https://ftp.mozilla.org/pub/firefox/releases/<br>
+        这个是官方FLP站点，注意下载52.9版本，这是最后一个支持XP的版本<br>
+        https://www.123pan.com/s/6zDuVv-vcWHA.html<br>
+        这是某贴吧网友的H5视频补丁，替换到Firefox 52.9里就可以刷B站了（360/360极速浏览器也可以）<br>
+千千静听<br>
+        https://www.123pan.com/s/6zDuVv-A8CHA.html<br>
+        回顾经典！！！<br>
+搜狗输入法<br>
+        https://www.123pan.com/s/6zDuVv-3cWHA.html<br>
+微信<br>
+        https://www.123pan.com/s/6zDuVv-hcWHA.html<br>
+QQ<br>
+        https://www.123pan.com/s/6zDuVv-HcWHA.html<br>
+某雷<br>
+        https://www.123pan.com/s/6zDuVv-AcWHA.html<br>
+        某雷古董版<br>
+WinRAR<br>
+        https://www.123pan.com/s/6zDuVv-9cWHA.html<br>
+PotPlayer<br>
+        https://www.123pan.com/s/6zDuVv-QcWHA.html<br>
+        总之，兼容性和XP一样，XP能用的软件2003都能用<br>
+<br>
+    Day5 系统优化<br>
+1.常规优化<br>
+1.1关闭系统属性中的特效。点击开始-控制面板-系统-高级-性能-设置在-视觉效果 设置为调整为最佳性能-确定。<br>
+1.2“我的电脑”－“属性”－“高级”－“错误报告”－选择“禁用错误汇报”<br>
+再点“启动和故障 恢复”－“设置”，将“将事件写入系统日志”、“发送管理警报”、“自动重新启动”这三项的勾去掉。再将下面的“写入调试信息”设置为“无”<br>
+1.3将虚拟内存值设为物理内存的2.5倍<br>
+1.4将“我的文档”文件夹转到其他分区<br>
+1.5将IE临时文件夹转到其他分区<br>
+2.加速开关机<br>
+2.1首先，打开“系统属性”点“高级”选项卡，在“启动和故障恢复”区里打开“设置”，去掉“系统启动”区里的两个勾，如果是多系统的用户保留“显示操作系统列表的时间”的勾。<br>
+2.2在“系统属性”里打开“硬件”选项卡，打开“设备管理器”，展开“IDE ATA/ATAPI控制器”，双击打开“次要IDE通道”属性，点“高级设置”选项卡，把设备1和2的传送模式改为“DMA（若可用）”，设备类型如果可以选择“无”就选为“无”，点确定完成设置。同样的方法设置“主要IDE通道”。<br>
+2.3设置预读改善开机速度，打开 注册表，找到HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager/Memory Management/PrefetchParameters，右边窗口将EnablePrefetcher的数值更改为1（0－禁用预读，1－预读应用程序，2－系统启动预读，3－前两者皆预读）。电脑是 PIII 800MHz 以上的可以尝试将数值更改为4或5。<br>
+2.4打开注册表（开始－运行－regedit），单击“我的电脑”打开“编辑”菜单的“查找”，输入AutoEndTasks，点“查找下一个”。双击打开找到的结果修改“数值数据”为1（此项是让系统自动关闭停止响应的程序）。然后在AutoEndTasks的下面找到 HungAppTimeout（将其“数值数据”设为2000或者更小，推荐设为200），再找到WaitToKillAppTimeout（将其“数值数据”设为2000或者更小，推荐设为1000）。在这里顺便也把菜单延迟的时间修改一下，在AutoEndTasks的下面找到 MenuShowDelay，数值是以毫秒为单位，如果想去掉菜单延迟就设为0。修改后点“编辑”菜单，打开“查找下一个”（快捷键F3），继续查找，把找到的结果都安照上一步的方法修改（注意：数值要对应相同）。<br>
+2.5win+r msconfig 启动 选项卡，点击它，这个选项卡中显示了 Windows 启动时运行的所有程序。（有启动项的意思）<br>
+3.系统减肥<br>
+3.1删除系统文件备份 sfc.exe /purgecache<br>
+3.2删除驱动备份 windows/driver cache/i386 目录下的Driver.cab文件<br>
+3.3取消系统还原<br>
+3.4删除帮助文件<br>
+3.5删掉/WINDOWS/system32/dllcache下文件<br>
+3.6把我的文档、IE的临时文件夹都转到其他分区。<br>
+3.7把虚拟内存也转到其他盘<br>
+3.8将应用 软件装在其他盘<br>
+3.9删除/windows/ime下不用的输入法<br>
+3.10用NTFS格式装节省空间<br>
+    <br>
+    <a href="https://HFStudio-faryou.github.io">返回主页</a>
+  </p>
+</body>
+</html>
