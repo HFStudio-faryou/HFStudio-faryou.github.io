@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Windows Server 2008 R2的复活</title>
+</head>
+<body>
+  <h1>Windows Server 2008 R2的复活</h1>
+  <p>
+        过年期间，我帮一个亲戚修理了一台老爷机，装了个Windows Server 2008 R2（话说各位有用服务器系统的吗），复活了这台老东西。接下来，我和大家分享一下我复活Windows Server 2008 R2的心得——<br>
+<br>
+<br>
+一堆废话<br>
+        Windows Server 2008 R2是微软于20xx年（话说是几几年来着）发布的服务器操作系统，该系统基于Windows NT 6.1，与Windows 7相同。微软于2020年1月14日停止了对其的全部支持虽然微软放弃了它，但是还有我——自以为是的faryou顶着，大家仍可以继续使用该系统（破防了吧）。<br>
+        下面，由我来告诉你，如何在2023年用好Windows Server 2008 R2——<br>
+<br>
+<br>
+开始之前<br>
+        安装系统之前，你身边如果有半死不活的64位处理器老电脑，可以拿出来和我一起做，复活时间预计一周。<br>
+
+    
+    Day1 安装系统<br>
+Windows Server 2008 R2的镜像链接：https://www.123pan.com/s/6zDuVv-g0WHA.html<br>
+安装UltraISO→https://cn.ultraiso.net，自己下载，用虚拟机的可以跳过这步。安装过程很简单，不说了，一直傻瓜式下一步就可以。<br>
+准备一个4G及以上的U盘，打开UltraISO，在上部菜单栏选择文件→打开，选择下载好的镜像，打开后在上部菜单栏选择启动→写入硬盘映像，然后插入U盘，点击开始进行刻录，刻录完成后关闭窗口并弹出U盘（注意：此举动会清空U盘上所有数据，请提前进行备份！）<br>
+将U盘插入你的老爷机，设置U盘启动，虚拟机直接装载镜像，开始安装。这一步过程也只需不断下一步即可。亲测虚拟机15分钟，实体机一小时。<br>
+
+    
+    Day2 安装补丁<br>
+        装完系统后，最重要的就是打补丁。注意：请大家不要急躁，一步步来，我在这一阶段花了半天<br>
+SP1<br>
+https://www.123pan.com/s/6zDuVv-gUWHA.html<br>
+一直下一步就行<br>
+Updatepack7R2<br>
+https://www.123pan.com/s/6zDuVv-FUWHA.html<br>
+开始的时候注意选择不更新，之后一直下一步就行<br>
+Windows Update<br>
+在开始菜单→所有程序→Windows Update中接收更新即可，这一步时间很长，可以检查上半个小时，装完预计2~3小时<br>
+BypassESU<br>
+https://www.123pan.com/s/6zDuVv-YUWHA.html<br>
+最后。。。开个挂，把微软到2023年的扩展更新也收了（微软：你这**）。运行LiveOS-Setup，输入1进行安装，完成了重启，再去Windows Update里接收更新。<br>
+
+
+    Day3 打驱动、开启Aero、联网和激活<br>
+对于一台电脑来说，驱动的重要性不亚于补丁，所以我们接下来就要为我们的老爷机打驱动。先到驱动精灵官网下载万能网卡版→http://www.drivergenius.com/wangka/，打上网卡驱动，打完驱动后重启，在控制面板→卸载程序中卸载驱动精灵万能网卡版。<br>
+然后我们要进行联网，再打其它设备的驱动。重启之后，打开控制面板，选择程序→打开或关闭Windows功能，在向导中勾选无线LAN服务，然后一直点击下一步，重启。然后在右下角网络设置联网，再去驱动精灵官网下载普通版驱动精灵→https://www.drivergenius.com/，打上剩余驱动，重启，再卸掉普通版驱动精灵（怎么感觉这波操作有点熟悉）。<br>
+激活密钥，自己输→https://home.x64bbs.cn/forum.php?mod=viewthread&tid=2339&fromuid=832<br>
+下面是开启Aero，提前说一声，内存小于4G的不要看这步了，不然电脑会特别卡。在控制面板里选择程序→打开或关闭Windows功能，勾选桌面体验，电脑内存大于4G的还可以勾选优质Windows音频视频体验，一直点击下一步，电脑重启，在桌面右键→个性化中开启Aero主题，开启Aero。<br>
+对Day2内容的错误进行改正：有关Windows Update的更新在没联网的情况下无法接收，请联网后再检查。也可以先打驱动再安装补丁<br>
+<br>
+<br>
+    Day4 安装软件及优化<br>
+Chrome<br>
+https://www.google.cn/intl/zh-CN/chrome/<br>
+        给大家的是在线安装包<br>
+Firefox<br>
+https://www.firefox.com.cn/<br>
+office<br>
+https://www.123pan.com/s/6zDuVv-qUWHA.html<br>
+        我这里给了大家2个版本：2010和2016，个人更喜欢2010，与Aero比较搭<br>
+WPS<br>
+https://www.wps.cn/<br>
+        坚持国产！<br>
+搜狗输入法<br>
+https://shurufa.sogou.com/<br>
+WinRAR<br>
+http://www.winrar.com.cn/<br>
+        注意选64位<br>
+某雷<br>
+https://www.xunlei.com/<br>
+        也可以用网上的各种绿化版<br>
+IDM
+https://www.internetdownloadmanager.com/<br>
+火绒安全软件<br>
+https://www.huorong.cn/<br>
+360安全卫士<br>
+https://weishi.360.cn/?source=homepage&r=bd<br>
+推荐极速版<br>
+        最后总结一下，2008 R2的内核和7相同，所以7能用的软件2008 R2都能用怎么（怎么感觉白分享了一通呢）<br>
+        2008 R2使用技巧：尽量用管理员账户登录，不然每用一次管理员权限都要输密码。其它的使用方式与7大致相同，当成7用就行（话说我之所以用服务器2008 R2，是因为它有Hyper-v和服务器管理器，且占用比7低）<br>
+ <br>
+<br>
+    Day5 虚拟机和软件开发<br>
+        先安装Visual Studio→https://my.visualstudio.com/Downloads<br>
+        然后是Hyper-v。打开服务器管理器→添加角色，勾选Hyper-v虚拟机，一直点下一步，重启完了就可以在开始菜单中找到Hyper-v了，使用方法不用我说了，网上都有（懂的人不必问，不懂的何必问）<br>
+  <br>
+  </p>
+  <a href="https://HFStudio-faryou.github.io">返回主页</a>
+</body>
+</html>
