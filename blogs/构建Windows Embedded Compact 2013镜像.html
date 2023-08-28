@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>构建Windows Embedded Compact 2013镜像</title>
+</head>
+<body>
+  <h1>构建Windows Embedded Compact 2013镜像</h1>
+  <p>
+简介<br>
+        Windows Embedded Compact 2013，是微软推出的一款嵌入式操作系统，是Windows Embedded Compact 7的升级版本。它让Windows Embedded系列产品与Windows 8能够更好地联系在一起。<br>
+准备工具<br>
+        1、Visual Studio 2012（至少Update 2）<br>
+        2、Windows Embedded Compact 2013开发工具包<br>
+        3、VirtualPC<br>
+        4、DR-dos启动盘<br>
+开发过程<br>
+        点击左上角文件→新建→项目，选择Platform Builder→OS Design，在弹出来的窗口中选择x86 CEPC，选择默认样本，选择Win32 and Winforms UI Device，接下来选择组件，点击完成，忽略警告窗口。点击生成→生成解决方案。生成窗口下方提示成功，复制下上方链接，到文件资源管理器找到生成的nk.bin，重命名为ceibage.bin，复制并替换到DR-Dos启动盘里。在VirtualPC中装载启动盘，即可进入系统。<br>
+    <br>
+  </p>
+  <a href="https://HFStudio-faryou.github.io">返回主页</a>
+</body>
+  </html>
